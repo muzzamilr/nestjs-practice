@@ -11,7 +11,7 @@
     hello
   '';
   
-  services.postgres.enable = true;
+  # services.postgres.enable = true;
   
   # https://devenv.sh/languages/
   # languages.nix.enable = true;
