@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  dev-db:
+    image: postgres:15
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: ${USERNAME}
+      POSTGRES_PASSWORD: ${USER_PASS}
+      POSTGRES_DB: ${DB_NAME}
+    networks:
+      - mynetwork
+
+  test-db:
+    image: postgres:15
+    ports:
+      - '5434:5432'
+    environment:
+      POSTGRES_USER: ${USERNAME}
+      POSTGRES_PASSWORD: ${USER_PASS}
+      POSTGRES_DB: ${DB_NAME}
+    networks:
+      - mynetwork
+networks:
+  mynetwork:
